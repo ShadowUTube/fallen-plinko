@@ -7,9 +7,9 @@ st.title("Fallen Plinko Testing")
 st.write("Respond with how many caps you want to bet on each option")
 
 two = st.number_input("2x:", step=1)
-three = st.number_input("3x: ")
-five = st.number_input("5x: ")
-ten = st.number_input("10x: ")
+three = st.number_input("3x:", step=1)
+five = st.number_input("5x:", step=1)
+ten = st.number_input("10x:", step=1)
 
 iterations = int(input("\nHow many times of the plinko board running you want to simulate? "))
 print("\n")
