@@ -11,8 +11,7 @@ three = st.number_input("3x:", step=1)
 five = st.number_input("5x:", step=1)
 ten = st.number_input("10x:", step=1)
 
-iterations = int(input("\nHow many times of the plinko board running you want to simulate? "))
-print("\n")
+iterations = st.number_input("How many times of the plinko board running do you want to simulate?", step=1)
 
 input_total = two + three + five + ten
 
@@ -42,11 +41,9 @@ for x in range(1, iterations):
     total.append(amount)
 
 profit = sum(total) - sum(lost_list)
-print("\n")
-print("\n")
-print("\n")
-print("You made a total of " + str(sum(total)) + " caps!")
-print("You lost a total of " + str(sum(lost_list)) + " caps!")
-print("\n")
-print("Your total profit was " + str(profit) + " caps!")
-print("\n")
+
+
+st.write("You made a total of " + str(sum(total)) + " caps!")
+st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
+
+st.write("Your total profit was " + str(profit) + " caps!")
