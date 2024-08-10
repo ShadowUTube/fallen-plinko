@@ -21,25 +21,23 @@ def choose_option():
     
     return random.choices(options, probabilities)[0]
 
-for x in range(1, iterations):
+for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `iterations + 1` to include the last iteration.
     choice = choose_option()
     if choice == 2:
         multiplied = two
-        lost = input_total - two
     elif choice == 3:
         multiplied = three
-        lost = input_total - three
     elif choice == 5:
         multiplied = five
-        lost = input_total - five
-    elif choice == choice == 10:
+    elif choice == 10:
         multiplied = ten
-        lost = input_total - ten
+
     amount = choice * multiplied
+    lost = input_total - multiplied
 
     lost_list.append(lost)
     total.append(amount)
-
+    
 profit = sum(total) - sum(lost_list)
 
 
