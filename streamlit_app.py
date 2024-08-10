@@ -4,6 +4,7 @@ import random
 total = []
 lost_list = []
 st.title("Fallen Plinko Testing")
+st.write("*To start fill out the imformation, and click rerun button*")
 st.write("Respond with how many caps you want to bet on each option")
 
 two = st.number_input("2x:", step=1)
