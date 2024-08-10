@@ -41,7 +41,7 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
 profit = sum(total) - sum(lost_list)
 
 if st.button("Rerun"):
-    st.rerun()
+    st.rerun(scope="fragment")
 
 @st.experimental_fragment
 def get_data():
