@@ -37,9 +37,11 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
 
     lost_list.append(lost)
     total.append(amount)
-    
+
 profit = sum(total) - sum(lost_list)
 
+if st.button("Rerun"):
+    st.rerun()
 
 st.write("You made a total of " + str(sum(total)) + " caps!")
 st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
