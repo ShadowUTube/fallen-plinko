@@ -48,5 +48,3 @@ def get_data():
 
 if st.button("Rerun"):
     get_data()
-    
-get_data()
