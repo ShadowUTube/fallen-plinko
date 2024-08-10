@@ -43,7 +43,11 @@ profit = sum(total) - sum(lost_list)
 if st.button("Rerun"):
     st.rerun()
 
-st.write("You made a total of " + str(sum(total)) + " caps!")
-st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
+@st.experimental_fragment
+def get_data():
+    st.write("You made a total of " + str(sum(total)) + " caps!")
+    st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
 
-st.write("Your total profit was " + str(profit) + " caps!")
+    st.write("Your total profit was " + str(profit) + " caps!")
+    
+get_data()
