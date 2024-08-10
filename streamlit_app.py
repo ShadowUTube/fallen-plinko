@@ -40,14 +40,13 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
 
 profit = sum(total) - sum(lost_list)
 
-if st.button("Rerun"):
-    st.rerun(scope="fragment")
-
-@st.experimental_fragment
 def get_data():
     st.write("You made a total of " + str(sum(total)) + " caps!")
     st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
 
     st.write("Your total profit was " + str(profit) + " caps!")
+
+if st.button("Rerun"):
+    get_data()
     
 get_data()
