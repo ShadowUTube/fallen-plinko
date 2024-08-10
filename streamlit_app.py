@@ -4,12 +4,12 @@ import random
 total = []
 lost_list = []
 st.title("Fallen Plinko Testing")
-st.write("Respond with how many caps you want to bet on each option ")
+st.write("Respond with how many caps you want to bet on each option")
 
-two = int(input("\n2x: "))
-three = int(input("3x: "))
-five = int(input("5x: "))
-ten = int(input("10x: "))
+two = st.number_input("\n2x: ")
+three = st.number_input("3x: ")
+five = st.number_input("5x: ")
+ten = st.number_input("10x: ")
 
 iterations = int(input("\nHow many times of the plinko board running you want to simulate? "))
 print("\n")
