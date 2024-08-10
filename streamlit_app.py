@@ -6,7 +6,7 @@ lost_list = []
 st.title("Fallen Plinko Testing")
 st.write("Respond with how many caps you want to bet on each option")
 
-two = st.number_input("2x:" step=1)
+two = st.number_input("2x:", step=1)
 three = st.number_input("3x: ")
 five = st.number_input("5x: ")
 ten = st.number_input("10x: ")
