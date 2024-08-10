@@ -1,7 +1,10 @@
+import streamlit as st
 import random
+
 total = []
 lost_list = []
-print("Respond with how many caps you want to bet on each option ")
+st.title("Fallen Plinko Testing")
+st.write("Respond with how many caps you want to bet on each option ")
 
 two = int(input("\n2x: "))
 three = int(input("3x: "))
