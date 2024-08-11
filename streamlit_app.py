@@ -2,9 +2,9 @@ import streamlit as st
 import random
 
 total = []
-lost_list = []
+spent_list = []
 st.title("Fallen Plinko Testing")
-st.write("*To start fill out the imformation, and click rerun button*")
+st.write("*To start fill out the information, and click rerun button*")
 st.write("Respond with how many caps you want to bet on each option")
 
 two = st.number_input("2x:", step=1)
@@ -22,28 +22,26 @@ def choose_option():
     
     return random.choices(options, probabilities)[0]
 
-for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `iterations + 1` to include the last iteration.
+for x in range(1, iterations + 1):
     choice = choose_option()
     if choice == 2:
-        multiplied = two
+        bet = two
     elif choice == 3:
-        multiplied = three
+        bet = three
     elif choice == 5:
-        multiplied = five
+        bet = five
     elif choice == 10:
-        multiplied = ten
+        bet = ten
 
-    amount = choice * multiplied
-    lost = input_total - multiplied
+    winnings = choice * bet
+    spent_list.append(bet)
+    total.append(winnings)
 
-    lost_list.append(lost)
-    total.append(amount)
-
-profit = (sum(total) - sum(lost_list)) - input_total
+profit = sum(total) - sum(spent_list)
 
 def get_data():
     st.write("You made a total of " + str(sum(total)) + " caps!")
-    st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
+    st.write("You spent a total of " + str(sum(spent_list)) + " caps!")
 
     st.write("Your total profit was " + str(profit) + " caps!")
 
