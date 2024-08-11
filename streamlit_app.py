@@ -40,7 +40,7 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
         gained_back.append(ten)
 
     amount = choice * multiplied
-    lost = input_total + multiplied
+    lost = input_total - multiplied
 
     lost_list.append(lost)
     total.append(amount)
