@@ -47,11 +47,12 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
 
 #spent = total_spent -  sum(gained_back)
 #lost = sum(lost_list) - sum(gained_back)
-profit = (sum(total) - sum(lost_list)) - sum(gained_back)# - spent
+profit = (sum(total) - sum(lost_list)) + sum(gained_back)# - spent
 
 def get_data():
     st.write("You made a total of " + str(sum(total)) + " caps!")
-    st.write("You lost a total of " + str(sum(lost_list) - sum(gained_back)) + " caps!")
+    st.write("You spent a total of " + str(total_spent) + " caps!")
+    st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
 #    st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
     st.write("Your total profit was " + str(profit) + " caps!")
 
