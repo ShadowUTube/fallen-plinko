@@ -40,19 +40,19 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
         gained_back.append(ten)
 
     amount = choice * multiplied
-    lost = input_total - multiplied
+    lost = input_total + multiplied
 
     lost_list.append(lost)
     total.append(amount)
 
-spent = total_spent -  sum(gained_back)
-
-profit = (sum(total) - sum(lost_list)) - spent
+#spent = total_spent -  sum(gained_back)
+#lost = sum(lost_list) - sum(gained_back)
+profit = (sum(total) - sum(lost_list))# - spent
 
 def get_data():
     st.write("You made a total of " + str(sum(total)) + " caps!")
-    st.write("You lost a total of " + str(sum(lost_list) - sum(gained_back)) + " caps!")
-
+#    st.write("You lost a total of " + str(sum(lost_list) + sum(gained_back)) + " caps!")
+    st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
     st.write("Your total profit was " + str(profit) + " caps!")
 
 if st.button("Rerun"):
