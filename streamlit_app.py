@@ -1,9 +1,10 @@
 import streamlit as st
 import random
 
-total_profit = 0
+total = []
+lost_list = []
 st.title("Fallen Plinko Testing")
-st.write("*To start, fill out the information, and click the rerun button*")
+st.write("*To start fill out the imformation, and click rerun button*")
 st.write("Respond with how many caps you want to bet on each option")
 
 two = st.number_input("2x:", step=1)
@@ -13,29 +14,38 @@ ten = st.number_input("10x:", step=1)
 
 iterations = st.number_input("How many times of the plinko board running do you want to simulate?", step=1)
 
+input_total = two + three + five + ten
+
 def choose_option():
     options = [2, 3, 5, 10]
     probabilities = [3/8, 2/8, 2/8, 1/8]
     
     return random.choices(options, probabilities)[0]
 
-for x in range(1, iterations + 1):
+for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `iterations + 1` to include the last iteration.
     choice = choose_option()
     if choice == 2:
-        bet = two
+        multiplied = two
     elif choice == 3:
-        bet = three
+        multiplied = three
     elif choice == 5:
-        bet = five
+        multiplied = five
     elif choice == 10:
-        bet = ten
+        multiplied = ten
 
-    winnings = choice * bet
-    profit = winnings - bet  # Calculate profit for this round
-    total_profit += profit
+    amount = choice * multiplied
+    lost = input_total - multiplied
+
+    lost_list.append(lost)
+    total.append(amount)
+
+profit = sum(total) - sum(lost_list)
 
 def get_data():
-    st.write("You made a total profit of " + str(total_profit) + " caps!")
+    st.write("You made a total of " + str(sum(total)) + " caps!")
+    st.write("You lost a total of " + str(sum(lost_list)) + " caps!")
+
+    st.write("Your total profit was " + str(profit) + " caps!")
 
 if st.button("Rerun"):
     get_data()
