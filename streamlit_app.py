@@ -39,7 +39,7 @@ for x in range(1, iterations + 1):  # Notice that I changed `iterations` to `ite
     lost_list.append(lost)
     total.append(amount)
 
-profit = sum(total) - sum(lost_list)
+profit = (sum(total) - sum(lost_list)) - input_total
 
 def get_data():
     st.write("You made a total of " + str(sum(total)) + " caps!")
